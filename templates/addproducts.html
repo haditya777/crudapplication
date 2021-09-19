@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addproducts</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark" >
+        <span class="navbar-brand mb-0 h1">Home</span>
+
+    </nav>
+<br><br><br><br>
+<form method="POST" class="register-form" action="\addproducts">
+    {% csrf_token %}
+    <div>
+        <label for="srno" class="form-label">Sr no:</label><span> </span>
+        <input type="number" class="form-label" name="srno" id="srno">
+    </div><br>
+    <div>
+        <label for="images" class="form-label">Images</label><span>
+        <input type="images" class="form-label" name="images" id="images">
+    </div><br>
+    <div>
+        <label for="productname" class="form-label">Product Name:</label><span> </span>
+        <input type="productname" class="form-label" name="productname" id="productname">
+    </div><br>
+    <div>
+        <label for="price" class="form-label">Price</label><span> </span>
+        <input type="number" class="form-label" name="price" id="price">
+    </div><br>
+    <div>
+        <label for="quantity" class="form-label">Quantity</label><span> </span>
+        <input type="number" class="form-label" name="quantity" id="quantity">
+    </div><br>
+    
+    <div>
+        <label for="status" class="form-label">Status</label><span> </span>
+        <select name="status" id="status">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary"  >Submit</button>
+</form>
+</body>
+</html>

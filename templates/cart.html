@@ -1,0 +1,45 @@
+{% extends 'userproduct.html' %}
+{% load static %}
+{% block body %}
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+	<title>viewcart</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+{% csrf_token %}
+
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col">
+                        <h4><b>Shopping Cart</b></h4>
+                    </div>
+                    <div class="col align-self-center text-right text-muted">items</div>
+                </div>
+            </div>
+            <div id='usercart'></div>
+            
+            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+        </div>
+        <div class="col-md-4 summary">
+            <div>
+                <h5><b>Summary</b></h5>
+            </div>
+            <hr>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right" id='totalPrice'>&euro;> 137.00</div>
+            </div> <button class="btn">CHECKOUT</button>
+        </div>
+    </div>
+</div>
+	<script src="{% static 'js\cart.js' %}"></script>
+	{% endblock body %}
+
+	

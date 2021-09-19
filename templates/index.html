@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration/login</title>
+    
+</head>
+
+<body>
+
+    <h2>Registere:</h2><br>
+    <form method="POST" class="register-form" action="\">
+        {% csrf_token %}
+        <div>
+            <label for="name" class="form-label">Name</label><span> </span>
+            <input type="text" class="form-label" name="name" id="name">
+        </div><br>
+        <div>
+            <label for="email" class="form-label">Email</label><span> </span>
+            <input type="email" class="form-label" name="email" id="email">
+        </div><br>
+        <div>
+            <label for="password" class="form-label">password</label><span> </span>
+            <input type="password" class="form-label" name="password" id="password">
+        </div><br>
+
+        <div>
+            <label for="usertype" class="form-label">UserType</label><span> </span>
+            <select name="usertype" id="usertype">
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+
+    <br><br>
+    
+
+    <h2>If Already registered login:</h2><br>
+
+        <form method="GET" class="login-form" action='/userproduct' >
+        {% csrf_token %}
+        
+        <div mb-3>
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-label" name="email1" id="email1">
+        </div><br>
+        <div mb-3>
+            <label for="password" class="form-label">password</label><span> </span>
+            <input type="password" class="form-label" name="password1" id="password1">
+        </div><br>
+        <span><p>  {% for error in messages %}
+            <p>{{ error }}</p>
+            {% endfor %}</p> </span>
+        <button type="submit" id='login' class="btn btn-primary" >Submit</button>
+    </form>
+
+
+    <script src="{% static 'js\login.js' %}"></script>
+</body>
+
+</html>
+
